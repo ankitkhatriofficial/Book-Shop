@@ -1,0 +1,21 @@
+<div class="books-screen">
+    <div class="books-container">
+        <form>
+            <input type="text" placeholder="Search..." ng-model=searchStr />
+        </form>
+        <div class="book-wrapper" ng-repeat="book in books | filter:searchStr">
+            <div class="book-img-wrapper">
+                <img src="imgs/{{book.imgUrl}}">
+            </div>
+            <div class="book-details-wrapper">
+                <p class="title">{{book.name}}</p>
+                <p class="price">{{book.price | currency:'Rs '}}</p>
+                <p class="publisher">Author: {{book.author | uppercase}}</p>
+                <p class="ratings">Rating: {{ book.rating}}</p>
+                <p class="release-date">Release Date: {{book.releaseDate}}</p>
+                <p class="book-desc">{{book.details}}</p>
+                <p class="cart-btn"><button ng-click="addToCart(book)">Add to Cart</button></p>
+            </div>
+        </div>
+    </div>
+</div>

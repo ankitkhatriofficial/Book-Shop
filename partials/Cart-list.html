@@ -1,0 +1,19 @@
+<div class="books-screen">
+    <div class="books-container">
+        <!-- <p>Please Click on but button to buy the Book</p> -->
+        <div class="book-wrapper" ng-repeat="book in cart">
+            <div class="book-img-wrapper">
+                <img src="imgs/{{book.imgUrl}}">
+            </div>
+            <div class="book-details-wrapper">
+                <p class="title">{{book.name}}</p>
+                <p class="price">{{book.price | currency:'Rs '}}</p>
+                <p class="publisher">Author: {{book.author | uppercase}}</p>
+                <p class="ratings">Rating: {{ book.rating}}</p>
+                <p class="release-date">Release Date: {{book.releaseDate}}</p>
+                <p class="book-desc">{{book.details}}</p>
+                <p class="cart-btn"><button ng-click="buy(book)">Buy Book</button></p>
+            </div>
+        </div>
+    </div>
+</div>
